@@ -1,0 +1,8 @@
+{
+  "editor.tabSize": 2,
+  "files.eol": "\r\n",
+  "editor.formatOnSave": true,
+  "[markdown]": {
+    "editor.formatOnSave": false
+  },
+}

@@ -1,0 +1,36 @@
+{
+  "name": "address2gps",
+  "version": "0.1.0",
+  "description": "get gps by address without using google map api",
+  "scripts": {
+    "eslint:src": "eslint src/",
+    "eslint:test": "eslint __test__/",
+    "eslint": "yarn eslint:src && yarn eslint:test",
+    "jest": "jest",
+    "test": "npm run eslint && npm run jest",
+    "export": "next build ./src && next export ./src -o dist/"
+  },
+  "author": "thundermiracle",
+  "license": "MIT",
+  "dependencies": {
+    "ramda": "^0.26.1",
+    "node-fetch": "2.6.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/node": "^7.5.5",
+    "babel-eslint": "^10.0.2",
+    "babel-jest": "^24.8.0",
+    "colors": "1.3.3",
+    "cross-env": "^5.2.0",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-config-react": "^1.1.7",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^22.15.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "jest": "^24.8.0",
+    "prettier": "^1.18.2"
+  }
+}
