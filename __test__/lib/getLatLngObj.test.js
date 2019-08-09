@@ -1,4 +1,4 @@
-import getLatLngObj from '../src/getLatLngObj';
+import getLatLngObj from 'lib/getLatLngObj';
 
 test('input is not right', () => {
   const wrongInputs = [null, undefined, 123, '123'];

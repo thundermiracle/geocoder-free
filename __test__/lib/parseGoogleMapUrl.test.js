@@ -1,4 +1,4 @@
-import parseGoogleMapUrl from '../src/parseGoogleMapUrl';
+import parseGoogleMapUrl from 'lib/parseGoogleMapUrl';
 
 test('input is not right', () => {
   const wrongInputs = ['https://google.com/map/p=aweoiroiwuer', ''];

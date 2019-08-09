@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "baseUrl": "./",
+    "paths": {
+      "src/*": ["./src/*"],
+      "lib/*": ["./src/lib/*"]
+    }
+  },
+  "exclude": ["node_modules"]
+}

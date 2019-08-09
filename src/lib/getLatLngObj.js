@@ -1,5 +1,6 @@
 /**
  * split latlng(35.123, 149.123) and transform it to object { lat: 35.123, lng: 149.123 }
+ * @param {*string} str
  */
 export default function getLatLngObj(latlng) {
   if (

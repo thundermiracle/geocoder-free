@@ -1,3 +1,7 @@
+/**
+ * check if input is latlng. -> (35.123, 149.123)
+ * @param {*string} str
+ */
 export default function isLatLng(str) {
   const [lat, lng] = str.split(',');
 

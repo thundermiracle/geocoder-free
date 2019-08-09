@@ -1,3 +1,12 @@
+/**
+ * Parse google url string, return GPS array
+ *
+ * eg: https://google.com/maps/xxxxx/@35.123,136.123,17z/xxxxxxx
+ *    returns
+ *    [35.123, 136.123]
+ *
+ * @param {*string} url
+ */
 function parseGoogleMapUrl(url) {
   if (Array.isArray(url)) {
     return url;
