@@ -1,7 +1,7 @@
-import { Get, GetUrl } from './HttpClient';
-import GetLatLon from './parseGoogleMapUrl';
-import isLatLng from './isLatLng';
-import getMapUrlWithGPS from './getMapUrlWithGPS';
+import { Get, GetUrl } from 'lib/HttpClient';
+import GetLatLon from 'lib/parseGoogleMapUrl';
+import isLatLng from 'lib/isLatLng';
+import getMapUrlWithGPS from 'lib/getMapUrlWithGPS';
 
 const GET_GEO_BASE_URL = 'https://www.google.com/search?gl=jp&tbm=map&q=';
 

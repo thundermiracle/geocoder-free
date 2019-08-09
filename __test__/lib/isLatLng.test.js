@@ -1,4 +1,4 @@
-import isLatLng from '../src/isLatLng';
+import isLatLng from 'lib/isLatLng';
 
 test('input is normal address', () => {
   const result = isLatLng('東京都新宿区１－２－３');

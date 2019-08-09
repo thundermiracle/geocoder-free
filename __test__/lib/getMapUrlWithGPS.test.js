@@ -1,4 +1,4 @@
-import getMapUrlWithGPS from '../src/getMapUrlWithGPS';
+import getMapUrlWithGPS from 'lib/getMapUrlWithGPS';
 
 const wrongUrl1 =
   'https://www.google.com/maps/preview/place/%E3%80%92339-0074dummyaddressnumber1/data\u003d!4m2!3m1!1s0x6018b9b21c593123:0x6d3fc275fa08a742';

@@ -3,6 +3,14 @@ const START_STR = 'https://www.google.com/maps';
 const REG_MAPURL = new RegExp(`"${START_STR}.*?"`, 'g');
 const REG_URL_GPS = new RegExp('".*?/@[0-9].*?"');
 
+/**
+ * Get google map url from text which satisfy the following conditions:
+ *
+ * 1. starts with  https://www.google.com/maps
+ * 2. contains /@latitude, longitude (eg: /@35.123)
+ *
+ * @param {*string} str
+ */
 export default function getMapUrlWithGPS(str) {
   const matchesMapUrls = str.match(REG_MAPURL);
   if (matchesMapUrls == null) {
