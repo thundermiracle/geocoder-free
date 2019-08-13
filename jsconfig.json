@@ -4,7 +4,8 @@
     "baseUrl": "./",
     "paths": {
       "src/*": ["./src/*"],
-      "lib/*": ["./src/lib/*"]
+      "lib/*": ["./src/lib/*"],
+      "core/*": ["./src/core/*"]
     }
   },
   "exclude": ["node_modules"]

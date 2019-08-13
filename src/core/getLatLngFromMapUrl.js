@@ -7,7 +7,7 @@
  *
  * @param {*string} url
  */
-function parseGoogleMapUrl(url) {
+export default function getLatLngFromMapUrl(url) {
   if (Array.isArray(url)) {
     return url;
   }
@@ -24,5 +24,3 @@ function parseGoogleMapUrl(url) {
 
   return [+latitude, +longitude];
 }
-
-module.exports = parseGoogleMapUrl;
