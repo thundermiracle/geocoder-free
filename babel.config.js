@@ -11,6 +11,7 @@ const babelConfig = {
         alias: {
           src: './src',
           lib: './src/lib',
+          core: './src/core',
         },
       },
     ],

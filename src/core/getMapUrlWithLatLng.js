@@ -11,7 +11,7 @@ const REG_URL_GPS = new RegExp('".*?/@[0-9].*?"');
  *
  * @param {*string} str
  */
-export default function getMapUrlWithGPS(str) {
+export default function getMapUrlWithLatLng(str) {
   const matchesMapUrls = str.match(REG_MAPURL);
   if (matchesMapUrls == null) {
     return '';
