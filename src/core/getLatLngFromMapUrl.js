@@ -5,7 +5,9 @@
  *    returns
  *    [35.123, 136.123]
  *
- * @param {*string} url
+ * @param {*string/array} url
+ *
+ * @returns array
  */
 export default function getLatLngFromMapUrl(url) {
   if (Array.isArray(url)) {
