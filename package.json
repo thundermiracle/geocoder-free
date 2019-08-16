@@ -1,5 +1,5 @@
 {
-  "name": "address2gps",
+  "name": "geocoder-free",
   "version": "0.1.0",
   "license": "MIT",
   "description": "get gps by address without using google map api",
