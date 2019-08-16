@@ -2,7 +2,16 @@ console.log('NODE_ENV:', process.env.NODE_ENV);
 
 // common definition
 const babelConfig = {
-  presets: [],
+  presets: [
+    [
+      '@babel/env',
+      {
+        targets: {
+          node: 'current',
+        },
+      },
+    ],
+  ],
   plugins: [
     [
       'module-resolver',
@@ -26,14 +35,14 @@ const babelConfig = {
       },
     ],
   ],
-  env: {
-    test: {
-      presets: ['@babel/env'],
-    },
-    production: {
-      presets: ['@babel/env'],
-    },
-  },
+  // env: {
+  //   test: {
+  //     presets: ['@babel/env'],
+  //   },
+  //   production: {
+  //     presets: ['@babel/env'],
+  //   },
+  // },
   ignore: ['node_modules/**'],
 };
 
