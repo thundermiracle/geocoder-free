@@ -1,4 +1,5 @@
 import isLatLng from '../lib/isLatLng';
+import removePostCode from '../lib/removePostCode';
 
 import getAddressByGooGl from './getAddressByGooGl';
 import getMapUrlWithLatLngByAddress from './getMapUrlWithLatLngByAddress';
@@ -20,7 +21,7 @@ function getMapUrlWithLatLngByGooGl(url) {
       return Promise.resolve([+latitude, +longitude]);
     }
 
-    return getMapUrlWithLatLngByAddress(addressOrLatlng);
+    return getMapUrlWithLatLngByAddress(removePostCode(addressOrLatlng));
   });
 }
 
