@@ -1,5 +1,6 @@
-import isLatLng from '../lib/isLatLng';
 import removePostCode from '../lib/removePostCode';
+import getLatLngByDecimalStr from '../lib/getLatLngByDecimalStr';
+import getLatLngByDMSStr from '../lib/getLatLngByDMSStr';
 
 import getAddressByGooGl from './getAddressByGooGl';
 import getMapUrlWithLatLngByAddress from './getMapUrlWithLatLngByAddress';
@@ -15,13 +16,20 @@ import getMapUrlWithLatLngByAddress from './getMapUrlWithLatLngByAddress';
  */
 function getMapUrlWithLatLngByGooGl(url) {
   return getAddressByGooGl(url).then(addressOrLatlng => {
-    if (isLatLng(addressOrLatlng)) {
-      // Geocoding info in url
-      const [latitude, longitude] = addressOrLatlng.split(',');
-      return Promise.resolve([+latitude, +longitude]);
+    // try get as if it is decimal
+    let result = getLatLngByDecimalStr(addressOrLatlng);
+
+    if (result == null) {
+      // addressOrLatlng is not decimal, try dms
+      result = getLatLngByDMSStr(addressOrLatlng);
     }
 
-    return getMapUrlWithLatLngByAddress(removePostCode(addressOrLatlng));
+    if (result == null) {
+      // is address string
+      result = getMapUrlWithLatLngByAddress(removePostCode(addressOrLatlng));
+    }
+
+    return result instanceof Promise ? result : Promise.resolve(result);
   });
 }
 
