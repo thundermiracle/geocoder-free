@@ -12,8 +12,8 @@ GetLatLngByGooGl('https://goo.gl/maps/TmYFq1DdceHVpsHV6').then(latlng => {
   console.log(`Result: [${latlng}]`);
 });
 
-// GetLatLngByGooGl('https://goo.gl/maps/FELwD1G9JibSgbFr8').then(latlng => {
-//   console.log('\r\n[GEOCODE] https://goo.gl/maps/FELwD1G9JibSgbFr8 ->');
-//   console.log('Expected Printout: [ 35.658698, 139.744526 ]');
-//   console.log(`Result: [${latlng}]`);
-// });
+GetLatLngByGooGl('https://goo.gl/maps/FELwD1G9JibSgbFr8').then(latlng => {
+  console.log('\r\n[GEOCODE] https://goo.gl/maps/FELwD1G9JibSgbFr8 ->');
+  console.log('Expected Printout: [ 35.658694, 139.744528 ]');
+  console.log(`Result: [${latlng}]`);
+});

@@ -8,13 +8,13 @@ test('shortenurl with address', async () => {
   expect(result).toEqual([35.6585769, 139.7454506]);
 });
 
-// test('shortenurl with geocode', async () => {
-//   const result = await GetLatLngByGooGl(
-//     'https://goo.gl/maps/FELwD1G9JibSgbFr8',
-//   );
+test('shortenurl with geocode', async () => {
+  const result = await GetLatLngByGooGl(
+    'https://goo.gl/maps/FELwD1G9JibSgbFr8',
+  );
 
-//   expect(result).toEqual([35.658698, 139.744526]);
-// });
+  expect(result).toEqual([35.658694, 139.744528]);
+});
 
 test('wrong url', async () => {
   const result = await GetLatLngByGooGl(
