@@ -3,6 +3,6 @@
  *
  * @param {*string} addressWithPostCode
  */
-export default function removePostCode(addressWithPostCode) {
+export default function removePostCode(addressWithPostCode: string): string {
   return addressWithPostCode.replace(/〒.*?\+/, '');
 }

@@ -33,8 +33,9 @@
     "dev": "nodemon --exec babel-node dev",
     "build:rm": "rimraf dist/",
     "build:types": "tsc --emitDeclarationOnly",
+    "mv:types": "babel-node ./scripts/move-types",
     "build:js": "cross-env NODE_ENV=production babel src --out-dir dist --noEmit --extensions \".ts,.tsx\" --verbose",
-    "build": "yarn build:rm && yarn build:types && yarn build:js"
+    "build": "yarn build:rm && yarn build:types && yarn mv:types && yarn build:js"
   },
   "author": "thundermiracle",
   "dependencies": {
@@ -50,6 +51,7 @@
     "@babel/plugin-transform-runtime": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-typescript": "^7.3.3",
+    "@types/node-fetch": "^2.5.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.2",
     "babel-jest": "^24.8.0",
@@ -66,6 +68,8 @@
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jest": "^22.15.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
+    "fs-extra": "^8.1.0",
+    "glob": "^7.1.4",
     "jest": "^24.8.0",
     "nodemon": "^1.19.1",
     "prettier": "^1.18.2",
