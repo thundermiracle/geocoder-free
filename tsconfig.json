@@ -4,6 +4,13 @@
     "module": "commonjs",
     "declaration": true,
 
+    "baseUrl": "src",
+    "paths": {
+      "src/*": ["*"],
+      "lib/*": ["lib/*"],
+      "core/*": ["core/*"]
+    },
+
     "strict": true,
 
     "moduleResolution": "node",

@@ -1,5 +1,5 @@
 const { pathsToModuleNameMapper } = require('ts-jest/utils');
-const { compilerOptions } = require('./tsconfig.test');
+const { compilerOptions } = require('./tsconfig');
 
 module.exports = {
   collectCoverage: true,
@@ -13,15 +13,15 @@ module.exports = {
   transformIgnorePatterns: ['/node_modules/(?!ramda).+\\.js$', 'dist'],
   testPathIgnorePatterns: ['mocks'],
 
-  globals: {
-    'ts-jest': {
-      tsConfig: 'tsconfig.test.json',
-    },
-  },
+  // globals: {
+  //   'ts-jest': {
+  //     tsConfig: 'tsconfig.test.json',
+  //   },
+  // },
 
   moduleFileExtensions: ['ts', 'tsx', 'js'],
   moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, {
-    prefix: '<rootDir>/',
+    prefix: '<rootDir>/src/',
   }),
   testEnvironment: 'node',
   testRegex: '(/tests/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$',
