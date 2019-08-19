@@ -26,11 +26,15 @@
     "eslint:src": "eslint src/",
     "eslint:test": "eslint __test__/",
     "eslint": "yarn eslint:src && yarn eslint:test",
-    "dev": "nodemon --exec babel-node dev",
     "jest": "jest",
     "test": "yarn eslint && yarn jest && codecov",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "yarn type-check -- --watch",
+    "dev": "nodemon --exec babel-node dev",
     "build:rm": "rimraf dist/",
-    "build": "yarn build:rm && cross-env NODE_ENV=production babel src --out-dir ./dist --verbose"
+    "build:types": "tsc --emitDeclarationOnly",
+    "build:js": "cross-env NODE_ENV=production babel src --out-dir dist --noEmit --extensions \".ts,.tsx\" --verbose",
+    "build": "yarn build:rm && yarn build:types && yarn build:js"
   },
   "author": "thundermiracle",
   "dependencies": {
@@ -45,6 +49,7 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
     "@babel/plugin-transform-runtime": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
+    "@babel/preset-typescript": "^7.3.3",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.2",
     "babel-jest": "^24.8.0",
@@ -65,6 +70,7 @@
     "nodemon": "^1.19.1",
     "prettier": "^1.18.2",
     "regenerator-runtime": "^0.13.3",
-    "rimraf": "^3.0.0"
+    "rimraf": "^3.0.0",
+    "typescript": "^3.4.3"
   }
 }

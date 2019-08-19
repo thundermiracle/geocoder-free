@@ -3,6 +3,7 @@ console.log('NODE_ENV:', process.env.NODE_ENV);
 // common definition
 const babelConfig = {
   presets: [
+    '@babel/typescript',
     [
       '@babel/env',
       {

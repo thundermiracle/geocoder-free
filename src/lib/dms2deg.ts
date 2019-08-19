@@ -3,10 +3,10 @@
  *
  * @param {*string} dms
  */
-export default function dms2deg(dms) {
+export default function dms2deg(dms: string): number {
   const [degrees, minutes, seconds, direction] = dms.split(/[^\d\w.]+/);
 
-  let deg = (
+  let deg = +(
     Number(degrees) +
     Number(minutes) / 60 +
     Number(seconds) / 3600
@@ -17,5 +17,5 @@ export default function dms2deg(dms) {
     deg *= -1;
   }
 
-  return +deg;
+  return deg;
 }
