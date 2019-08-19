@@ -16,7 +16,8 @@
     "gps",
     "google map api",
     "latitude",
-    "longitude"
+    "longitude",
+    "position"
   ],
   "main": "dist/index.js",
   "files": [
@@ -51,6 +52,7 @@
     "@babel/plugin-transform-runtime": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-typescript": "^7.3.3",
+    "@types/jest": "^24.0.17",
     "@types/node-fetch": "^2.5.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.2",
@@ -75,6 +77,7 @@
     "prettier": "^1.18.2",
     "regenerator-runtime": "^0.13.3",
     "rimraf": "^3.0.0",
+    "ts-jest": "^24.0.2",
     "typescript": "^3.4.3"
   }
 }

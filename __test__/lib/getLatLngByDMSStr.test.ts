@@ -2,7 +2,6 @@ import getLatLngByDMSStr from 'lib/getLatLngByDMSStr';
 
 test('input is invalid', () => {
   expect(getLatLngByDMSStr(null)).toEqual(null);
-  expect(getLatLngByDMSStr()).toEqual(null);
   expect(getLatLngByDMSStr('')).toEqual(null);
   expect(getLatLngByDMSStr('東京都新宿区１－２－３')).toEqual(null);
 });

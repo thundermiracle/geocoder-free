@@ -14,18 +14,18 @@ const dmsLongitudeReg = /([0-9]{1,3})[:|°]([0-9]{1,2})[:|'|′]?([0-9]{1,2}(?:\
  * @param {*string} latlngStr
  */
 export default function getLatLngByDMSStr(
-  latlngStr: string,
+  latlngStr: string | null,
 ): LatLngArray | null {
   if (!latlngStr) {
     return null;
   }
 
-  if (dmsLatitudeReg.test(latlngStr) && dmsLongitudeReg.test(latlngStr)) {
-    const [dmsLatitude] = latlngStr.match(dmsLatitudeReg) || [''];
-    const [dmsLongitude] = latlngStr.match(dmsLongitudeReg) || [''];
+  const [dmsLatitude] = latlngStr.match(dmsLatitudeReg) || [''];
+  const [dmsLongitude] = latlngStr.match(dmsLongitudeReg) || [''];
 
-    return [dms2deg(dmsLatitude), dms2deg(dmsLongitude)];
+  if (dmsLatitude === '' || dmsLongitude === '') {
+    return null;
   }
 
-  return null;
+  return [dms2deg(dmsLatitude), dms2deg(dmsLongitude)];
 }
