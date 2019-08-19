@@ -2,13 +2,13 @@
   "name": "geocoder-free",
   "version": "0.1.0",
   "license": "MIT",
-  "description": "get gps by address without using google map api",
+  "description": "get latitude and longitude by address without using google map api",
   "repository": {
     "type": "git",
-    "url": "https://github.com/thundermiracle/address2gps"
+    "url": "https://github.com/thundermiracle/geocoder-free"
   },
   "bugs": {
-    "url": "https://github.com/thundermiracle/address2gps/issues"
+    "url": "https://github.com/thundermiracle/geocoder-free/issues"
   },
   "keywords": [
     "geocode",
