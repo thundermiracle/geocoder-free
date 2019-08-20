@@ -1,3 +1,5 @@
+import { LatLngArray } from './types';
+
 /**
  * get latitude&longtitude array from decimal latlng string
  *
@@ -7,7 +9,9 @@
  *
  * @param {*string} deciamlStr
  */
-export default function getLatLngByDecimalStr(deciamlStr) {
+export default function getLatLngByDecimalStr(
+  deciamlStr: string,
+): LatLngArray | null {
   if (!deciamlStr) {
     return null;
   }

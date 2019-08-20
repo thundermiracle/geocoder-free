@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "commonjs",
+    "declaration": true,
+
+    "baseUrl": "src",
+    "paths": {
+      "src/*": ["*"],
+      "lib/*": ["lib/*"],
+      "core/*": ["core/*"]
+    },
+
+    "strict": true,
+
+    "moduleResolution": "node",
+    "esModuleInterop": true
+  },
+  "include": ["src/**/*", "__test__/**/*"]
+}

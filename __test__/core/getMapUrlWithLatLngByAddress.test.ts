@@ -4,7 +4,7 @@ const rightUrl =
   'https://www.google.com/maps/preview/place/%E3%80%92339-0074dummyaddressnumber1/@35.2655598,139.2932499,3229a,13.1y/data\u003d!4m2!3m1!1s0x6018b9b21c593123:0x6d3fc275fa08a742';
 
 jest.mock('lib/HttpClient', () => ({
-  Get(type) {
+  Get(type: string) {
     const rightUrlInner =
       'https://www.google.com/maps/preview/place/%E3%80%92339-0074dummyaddressnumber1/@35.2655598,139.2932499,3229a,13.1y/data\u003d!4m2!3m1!1s0x6018b9b21c593123:0x6d3fc275fa08a742';
 

@@ -2,13 +2,13 @@
   "name": "geocoder-free",
   "version": "0.1.0",
   "license": "MIT",
-  "description": "get gps by address without using google map api",
+  "description": "get latitude and longitude by address without using google map api",
   "repository": {
     "type": "git",
-    "url": "https://github.com/thundermiracle/address2gps"
+    "url": "https://github.com/thundermiracle/geocoder-free"
   },
   "bugs": {
-    "url": "https://github.com/thundermiracle/address2gps/issues"
+    "url": "https://github.com/thundermiracle/geocoder-free/issues"
   },
   "keywords": [
     "geocode",
@@ -16,21 +16,28 @@
     "gps",
     "google map api",
     "latitude",
-    "longitude"
+    "longitude",
+    "position"
   ],
   "main": "dist/index.js",
   "files": [
     "dist"
   ],
   "scripts": {
-    "eslint:src": "eslint src/",
-    "eslint:test": "eslint __test__/",
+    "eslint:src": "eslint src/**/*.{ts,tsx}",
+    "eslint:test": "eslint __test__/**/*.{ts,tsx}",
     "eslint": "yarn eslint:src && yarn eslint:test",
-    "dev": "nodemon --exec babel-node dev",
     "jest": "jest",
-    "test": "yarn eslint && yarn jest && codecov",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "yarn type-check -- --watch",
+    "test": "yarn type-check && yarn eslint && yarn jest && codecov",
+    "dev": "ts-node-dev --respawn dev",
     "build:rm": "rimraf dist/",
-    "build": "yarn build:rm && cross-env NODE_ENV=production babel src --out-dir ./dist --verbose"
+    "build:types": "tsc --emitDeclarationOnly",
+    "mv:types": "babel-node ./scripts/move-types",
+    "rm:types": "babel-node ./scripts/remove-types",
+    "build:js": "cross-env NODE_ENV=production babel src --out-dir dist --noEmit --extensions \".ts,.tsx\" --verbose",
+    "build": "yarn build:rm && yarn build:types && yarn mv:types && yarn rm:types &&yarn build:js"
   },
   "author": "thundermiracle",
   "dependencies": {
@@ -45,6 +52,11 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
     "@babel/plugin-transform-runtime": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
+    "@babel/preset-typescript": "^7.3.3",
+    "@types/jest": "^24.0.17",
+    "@types/node-fetch": "^2.5.0",
+    "@typescript-eslint/eslint-plugin": "^2.0.0",
+    "@typescript-eslint/parser": "^2.0.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.2",
     "babel-jest": "^24.8.0",
@@ -58,13 +70,20 @@
     "eslint-config-prettier": "^6.0.0",
     "eslint-config-react": "^1.1.7",
     "eslint-import-resolver-babel-module": "^5.1.0",
+    "eslint-import-resolver-typescript": "^1.1.1",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jest": "^22.15.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.0",
+    "fs-extra": "^8.1.0",
+    "glob": "^7.1.4",
     "jest": "^24.8.0",
-    "nodemon": "^1.19.1",
     "prettier": "^1.18.2",
     "regenerator-runtime": "^0.13.3",
-    "rimraf": "^3.0.0"
+    "rimraf": "^3.0.0",
+    "ts-jest": "^24.0.2",
+    "ts-node": "^8.3.0",
+    "ts-node-dev": "^1.0.0-pre.41",
+    "typescript": "^3.4.3"
   }
 }

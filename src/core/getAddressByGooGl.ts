@@ -9,7 +9,7 @@ import getAddressFromMapUrl from './getAddressFromMapUrl';
  *
  * @param {*string} googlShortenUrl
  */
-function getAddressByGooGl(googlShortenUrl) {
+function getAddressByGooGl(googlShortenUrl: string): Promise<string> {
   return GetUrl(googlShortenUrl)
     .then(getAddressFromMapUrl)
     .then(decodeURIComponent);

@@ -11,7 +11,7 @@ const GET_GEO_BASE_URL = 'https://www.google.com/search?gl=jp&tbm=map&q=';
  *
  * @param {*string} address
  */
-function getMapUrlWithLatLngByAddress(address) {
+function getMapUrlWithLatLngByAddress(address: string): Promise<string> {
   return Get(`${GET_GEO_BASE_URL}${encodeURIComponent(address)}`, 'text')
     .then(data => data.replace(")]}'", ''))
     .then(getMapUrlWithLatLng);

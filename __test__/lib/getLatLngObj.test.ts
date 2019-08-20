@@ -1,11 +1,11 @@
 import getLatLngObj from 'lib/getLatLngObj';
 
 test('input is not right', () => {
-  const wrongInputs = [null, undefined, 123, '123'];
+  const wrongInputs = ['123'];
 
   const results = wrongInputs.map(getLatLngObj);
 
-  results.forEach(result => {
+  results.forEach((result: object) => {
     expect(result).toEqual({});
   });
 });

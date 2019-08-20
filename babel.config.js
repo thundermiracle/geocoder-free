@@ -3,6 +3,7 @@ console.log('NODE_ENV:', process.env.NODE_ENV);
 // common definition
 const babelConfig = {
   presets: [
+    '@babel/typescript',
     [
       '@babel/env',
       {
@@ -13,17 +14,6 @@ const babelConfig = {
     ],
   ],
   plugins: [
-    [
-      'module-resolver',
-      {
-        root: ['./src'],
-        alias: {
-          src: './src',
-          lib: './src/lib',
-          core: './src/core',
-        },
-      },
-    ],
     'add-module-exports',
     '@babel/plugin-proposal-class-properties',
     '@babel/plugin-proposal-object-rest-spread',

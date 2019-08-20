@@ -1,3 +1,5 @@
+import { LatLngArray } from '../lib/types';
+
 /**
  * Parse google url string, return GPS array
  *
@@ -9,7 +11,9 @@
  *
  * @returns array
  */
-export default function getLatLngFromMapUrl(url) {
+export default function getLatLngFromMapUrl(
+  url: string | LatLngArray,
+): LatLngArray | [] {
   if (Array.isArray(url)) {
     return url;
   }
