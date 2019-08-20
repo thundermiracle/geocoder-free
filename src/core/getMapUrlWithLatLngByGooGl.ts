@@ -15,7 +15,9 @@ import { LatLngArray } from '../lib/types';
  *
  * @param {*string} url
  */
-function getMapUrlWithLatLngByGooGl(url: string) {
+function getMapUrlWithLatLngByGooGl(
+  url: string,
+): Promise<LatLngArray | string> {
   return getAddressByGooGl(url).then(
     (addressOrLatlng: string): Promise<string | LatLngArray> => {
       // try get as if it is decimal

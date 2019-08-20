@@ -2,7 +2,6 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "commonjs",
-    "declaration": true,
 
     "baseUrl": "src",
     "paths": {
@@ -16,5 +15,5 @@
     "moduleResolution": "node",
     "esModuleInterop": true
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*", "__test__/**/*", "scripts/**/*"]
 }

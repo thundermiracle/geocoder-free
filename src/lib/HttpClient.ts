@@ -1,9 +1,9 @@
 import fetch, { RequestInit } from 'node-fetch';
 
-async function createHeader() {
-  return {
+function createHeader(): Promise<object> {
+  return Promise.resolve({
     Accept: 'application/json',
-  };
+  });
 }
 
 async function Post(url: string, data: object): Promise<string> {
@@ -26,7 +26,7 @@ async function Get(url: string, returnType = 'json'): Promise<string> {
   const res = await fetch(url, {
     headers,
     method: 'GET',
-  });
+  } as RequestInit);
 
   let result;
   if (returnType === 'json') {
@@ -43,7 +43,7 @@ async function GetUrl(url: string): Promise<string> {
   const res = await fetch(url, {
     headers,
     method: 'GET',
-  });
+  } as RequestInit);
 
   return res.url;
 }

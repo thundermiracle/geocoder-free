@@ -20,8 +20,8 @@ export default function getLatLngByDMSStr(
     return null;
   }
 
-  const [dmsLatitude] = latlngStr.match(dmsLatitudeReg) || [''];
-  const [dmsLongitude] = latlngStr.match(dmsLongitudeReg) || [''];
+  const [dmsLatitude] = dmsLatitudeReg.exec(latlngStr) || [''];
+  const [dmsLongitude] = dmsLongitudeReg.exec(latlngStr) || [''];
 
   if (dmsLatitude === '' || dmsLongitude === '') {
     return null;

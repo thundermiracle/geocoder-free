@@ -24,8 +24,8 @@
     "dist"
   ],
   "scripts": {
-    "eslint:src": "eslint src/",
-    "eslint:test": "eslint __test__/",
+    "eslint:src": "eslint src/**/*.{ts,tsx}",
+    "eslint:test": "eslint __test__/**/*.{ts,tsx}",
     "eslint": "yarn eslint:src && yarn eslint:test",
     "jest": "jest",
     "test": "yarn eslint && yarn jest && codecov",
@@ -54,6 +54,8 @@
     "@babel/preset-typescript": "^7.3.3",
     "@types/jest": "^24.0.17",
     "@types/node-fetch": "^2.5.0",
+    "@typescript-eslint/eslint-plugin": "^2.0.0",
+    "@typescript-eslint/parser": "^2.0.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.2",
     "babel-jest": "^24.8.0",
@@ -70,6 +72,7 @@
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jest": "^22.15.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.0",
     "fs-extra": "^8.1.0",
     "glob": "^7.1.4",
     "jest": "^24.8.0",

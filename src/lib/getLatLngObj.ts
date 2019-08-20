@@ -9,7 +9,7 @@ export default function getLatLngObj(latlng: string): LatLngObject | {} {
     latlng == null ||
     typeof latlng !== 'string' ||
     latlng === '' ||
-    latlng.indexOf(',') < 0
+    !latlng.includes(',')
   ) {
     return {};
   }
