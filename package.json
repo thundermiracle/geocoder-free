@@ -35,8 +35,9 @@
     "build:rm": "rimraf dist/",
     "build:types": "tsc --emitDeclarationOnly",
     "mv:types": "babel-node ./scripts/move-types",
+    "rm:types": "babel-node ./scripts/remove-types",
     "build:js": "cross-env NODE_ENV=production babel src --out-dir dist --noEmit --extensions \".ts,.tsx\" --verbose",
-    "build": "yarn build:rm && yarn build:types && yarn mv:types && yarn build:js"
+    "build": "yarn build:rm && yarn build:types && yarn mv:types && yarn rm:types &&yarn build:js"
   },
   "author": "thundermiracle",
   "dependencies": {
