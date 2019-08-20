@@ -31,7 +31,7 @@
     "test": "yarn eslint && yarn jest && codecov",
     "type-check": "tsc --noEmit",
     "type-check:watch": "yarn type-check -- --watch",
-    "dev": "nodemon --exec babel-node dev",
+    "dev": "ts-node-dev --respawn dev",
     "build:rm": "rimraf dist/",
     "build:types": "tsc --emitDeclarationOnly",
     "mv:types": "babel-node ./scripts/move-types",
@@ -73,11 +73,12 @@
     "fs-extra": "^8.1.0",
     "glob": "^7.1.4",
     "jest": "^24.8.0",
-    "nodemon": "^1.19.1",
     "prettier": "^1.18.2",
     "regenerator-runtime": "^0.13.3",
     "rimraf": "^3.0.0",
     "ts-jest": "^24.0.2",
+    "ts-node": "^8.3.0",
+    "ts-node-dev": "^1.0.0-pre.41",
     "typescript": "^3.4.3"
   }
 }
