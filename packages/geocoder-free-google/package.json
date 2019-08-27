@@ -1,0 +1,48 @@
+{
+  "name": "@geocoder-free/google",
+  "version": "0.1.0",
+  "license": "MIT",
+  "description": "get latitude and longitude by address without using google map api",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thundermiracle/geocoder-free"
+  },
+  "bugs": {
+    "url": "https://github.com/thundermiracle/geocoder-free/issues"
+  },
+  "keywords": [
+    "geocode",
+    "address",
+    "gps",
+    "google map api",
+    "latitude",
+    "longitude",
+    "position"
+  ],
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "eslint:src": "eslint src/**/*.{ts,tsx}",
+    "eslint:test": "eslint __test__/**/*.{ts,tsx}",
+    "eslint": "yarn eslint:src && yarn eslint:test",
+    "jest": "jest",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "yarn type-check -- --watch",
+    "test": "yarn type-check && yarn eslint && yarn jest && codecov",
+    "dev": "ts-node-dev --respawn dev",
+    "build:rm": "rimraf dist/",
+    "build:types": "tsc --emitDeclarationOnly",
+    "mv:types": "babel-node ./scripts/move-types",
+    "rm:types": "babel-node ./scripts/remove-types",
+    "build:js": "cross-env NODE_ENV=production babel src --out-dir dist --noEmit --extensions \".ts,.tsx\" --verbose",
+    "build": "yarn build:rm && yarn build:types && yarn mv:types && yarn rm:types &&yarn build:js"
+  },
+  "author": "thundermiracle",
+  "dependencies": {
+    "node-fetch": "2.6.0",
+    "ramda": "^0.26.1"
+  },
+  "devDependencies": {}
+}
