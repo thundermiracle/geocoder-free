@@ -1,4 +1,4 @@
-<h1 align="center">geocoder-free</h1>
+<h1 align="center">@geocoder-free/google</h1>
 
 [![npm version](https://badge.fury.io/js/geocoder-free.svg)](https://badge.fury.io/js/geocoder-free)
 [![dependencies Status](https://david-dm.org/thundermiracle/geocoder-free/status.svg)](https://david-dm.org/thundermiracle/geocoder-free)

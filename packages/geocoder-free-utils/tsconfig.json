@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig",
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "src/*": ["*"],
+      "lib/*": ["lib/*"],
+      "ja/*": ["ja/*"]
+    }
+  },
+  "include": ["src/**/*", "__test__/**/*"]
+}

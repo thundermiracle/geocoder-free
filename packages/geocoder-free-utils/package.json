@@ -1,0 +1,47 @@
+{
+  "name": "@geocoder-free/utils",
+  "version": "0.1.0",
+  "license": "MIT",
+  "description": "utils for geocoding incluing purging addresses",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thundermiracle/geocoder-free"
+  },
+  "bugs": {
+    "url": "https://github.com/thundermiracle/geocoder-free/issues"
+  },
+  "keywords": [
+    "geocode",
+    "address",
+    "utils",
+    "latitude",
+    "longitude"
+  ],
+  "main": "index.js",
+  "files": [
+    "ja",
+    "lib",
+    "index.js"
+  ],
+  "scripts": {
+    "eslint:src": "eslint src/**/*.{ts,tsx}",
+    "eslint:test": "eslint __test__/**/*.{ts,tsx}",
+    "eslint": "yarn eslint:src && yarn eslint:test",
+    "jest": "jest",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "yarn type-check -- --watch",
+    "test": "yarn type-check && yarn eslint && yarn jest && codecov",
+    "dev": "ts-node-dev --respawn dev",
+    "build:rm": "rimraf ja/ && rimraf lib/",
+    "build:types": "tsc --emitDeclarationOnly",
+    "mv:types": "node ../../scripts/move-types .",
+    "rm:types": "node ../../scripts/remove-types",
+    "build:js": "cross-env NODE_ENV=production babel src --out-dir ./ --noEmit --extensions \".ts,.tsx\" --verbose",
+    "build": "yarn build:rm && yarn build:types && yarn mv:types && yarn rm:types &&yarn build:js"
+  },
+  "author": "thundermiracle",
+  "dependencies": {
+    "ramda": "^0.26.1"
+  },
+  "devDependencies": {}
+}
