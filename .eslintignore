@@ -6,3 +6,6 @@
 
 # Ignore jest
 #test/**/*
+
+scripts/
+babel.config.js
