@@ -10,9 +10,9 @@ import { LatLngArray } from './types';
  * @param {*string} deciamlStr
  */
 export default function getLatLngByDecimalStr(
-  deciamlStr: string,
+  deciamlStr: string | null,
 ): LatLngArray | null {
-  if (!deciamlStr) {
+  if (deciamlStr == null) {
     return null;
   }
 

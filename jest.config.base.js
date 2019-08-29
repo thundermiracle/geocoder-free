@@ -7,6 +7,7 @@ module.exports = {
     '!**/node_modules/**',
     '!**/HttpClient.(js|ts)',
     '!**/logger.(js|ts)',
+    '!**/logFormat.(js|ts)',
     '!**/index.(js|ts)',
   ],
 
