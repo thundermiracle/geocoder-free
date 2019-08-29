@@ -8,4 +8,5 @@
 #test/**/*
 
 scripts/
-babel.config.js
+babel.*
+jest.config.*
