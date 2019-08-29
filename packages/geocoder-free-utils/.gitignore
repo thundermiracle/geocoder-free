@@ -1,4 +1,4 @@
-ja/**/*
-lib/**/*
-index.js
-index.d.ts
+/ja/**/*
+/lib/**/*
+/index.js
+/index.d.ts

@@ -9,8 +9,9 @@
     "clean": "lerna clean -y",
     "bootstrap": "lerna bootstrap --use-workspaces",
     "build": "lerna run build --use-workspaces --stream",
-    "eslint": "lerna run eslint:src",
-    "test": "lerna run test --stream --no-bail",
+    "eslint": "lerna run eslint:src --stream",
+    "type-check": "lerna run type-check --stream",
+    "test": "yarn eslint && yarn type-check && jest && codecov",
     "lerna-publish": "lerna publish"
   },
   "devDependencies": {
