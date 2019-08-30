@@ -17,5 +17,15 @@
       "language": "typescriptreact",
       "autoFix": true
     }
+  ],
+  "eslint.workingDirectories": [
+    {
+      "directory": "./packages/geocoder-free-google",
+      "changeProcessCWD": true
+    },
+    {
+      "directory": "./packages/geocoder-free-utils",
+      "changeProcessCWD": true
+    },
   ]
 }
