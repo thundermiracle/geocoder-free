@@ -42,6 +42,9 @@
     "build:dev": "yarn build --watch"
   },
   "author": "thundermiracle",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "ramda": "^0.26.1"
   },

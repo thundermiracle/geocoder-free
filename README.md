@@ -13,7 +13,7 @@ Get latitude&longitude without using any API.
 # Install
 
 ```shell
- yarn add geocoder-free
+ yarn add @geocoder-free/google
 ```
 
 # Usage
@@ -21,7 +21,7 @@ Get latitude&longitude without using any API.
 1. Get latlng by address
 
     ```javascript
-    const { GetLatLngByAddress } = require('geocoder-free');
+    const { GetLatLngByAddress } = require('@geocoder-free/google');
 
     GetLatLngByAddress('tokyo tower').then(console.log);
     // print [35.6585769, 139.7454506]
@@ -30,7 +30,7 @@ Get latitude&longitude without using any API.
 1. Get latlng by goo.gl(google map shorten url)
 
     ```javascript
-    const { GetLatLngByGooGl } = require('geocoder-free');
+    const { GetLatLngByGooGl } = require('@geocoder-free/google');
 
     GetLatLngByGooGl('https://goo.gl/maps/TmYFq1DdceHVpsHV6').then(console.log);
     // print [35.6585769, 139.7454506]

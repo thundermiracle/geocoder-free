@@ -41,6 +41,9 @@
     "build": "yarn build:types && yarn build:js"
   },
   "author": "thundermiracle",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "node-fetch": "2.6.0",
     "@geocoder-free/utils": "0.1.0"
