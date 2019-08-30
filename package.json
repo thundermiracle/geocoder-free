@@ -10,12 +10,12 @@
     "bootstrap": "lerna bootstrap --use-workspaces && yarn build:utils",
     "build:utils": "lerna run build --use-workspaces --stream --scope @geocoder-free/utils",
     "build": "lerna run build --use-workspaces --stream",
-    "eslint": "lerna run eslint:src --stream",
+    "eslint": "yarn build:utils && lerna run eslint:src --stream",
     "type-check": "lerna run type-check --stream",
     "jest": "jest && codecov",
     "test:q": "yarn eslint && yarn type-check && yarn jest",
     "jest:ci": "jest -i && codecov",
-    "test": "yarn eslint && yarn type-check && yarn jest:ci",
+    "test": "yarn type-check && yarn eslint && yarn jest:ci",
     "lerna-publish": "lerna publish"
   },
   "devDependencies": {
