@@ -1,6 +1,5 @@
-import removePostCode from '../lib/removePostCode';
-import getLatLngByDecimalStr from '../lib/getLatLngByDecimalStr';
-import getLatLngByDMSStr from '../lib/getLatLngByDMSStr';
+import removePostCode from '@geocoder-free/utils/ja/removePostCode';
+import { getLatLngByDecimalStr, getLatLngByDMSStr } from '@geocoder-free/utils';
 
 import getAddressByGooGl from './getAddressByGooGl';
 import getMapUrlWithLatLngByAddress from './getMapUrlWithLatLngByAddress';
