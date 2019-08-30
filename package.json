@@ -11,7 +11,10 @@
     "build": "lerna run build --use-workspaces --stream",
     "eslint": "lerna run eslint:src --stream",
     "type-check": "lerna run type-check --stream",
-    "test": "yarn eslint && yarn type-check && jest && codecov",
+    "jest": "jest && codecov",
+    "test:q": "yarn eslint && yarn type-check && yarn jest",
+    "jest:ci": "jest -i && codecov",
+    "test": "yarn eslint && yarn type-check && yarn jest:ci",
     "lerna-publish": "lerna publish"
   },
   "devDependencies": {
