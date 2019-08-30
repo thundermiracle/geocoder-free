@@ -15,7 +15,7 @@
     "jest": "jest && codecov",
     "test:q": "yarn eslint && yarn type-check && yarn jest",
     "jest:ci": "jest -i && codecov",
-    "test": "yarn type-check && yarn eslint && yarn jest:ci",
+    "test": "yarn eslint && yarn type-check && yarn jest:ci",
     "lerna-publish": "lerna publish"
   },
   "devDependencies": {
