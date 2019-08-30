@@ -1,5 +1,10 @@
 import getLatLngByDecimalStr from 'lib/getLatLngByDecimalStr';
 
+test('input is null', () => {
+  const result = getLatLngByDecimalStr(null);
+  expect(result).toEqual(null);
+});
+
 test('input is normal address', () => {
   const result = getLatLngByDecimalStr('東京都新宿区１－２－３');
   expect(result).toEqual(null);

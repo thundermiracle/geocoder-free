@@ -5,7 +5,6 @@
 [![devDependencies Status](https://david-dm.org/thundermiracle/geocoder-free/dev-status.svg)](https://david-dm.org/thundermiracle/geocoder-free?type=dev)
 [![CircleCI](https://img.shields.io/circleci/build/github/thundermiracle/geocoder-free/master)](https://circleci.com/gh/thundermiracle/geocoder-free)
 [![codecov](https://img.shields.io/codecov/c/github/thundermiracle/geocoder-free)](https://codecov.io/gh/thundermiracle/geocoder-free)
-[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=geocoder-free)](https://dependabot.com)
 
 # Description
 
