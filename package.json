@@ -7,9 +7,10 @@
   ],
   "scripts": {
     "clean": "lerna clean -y",
-    "bootstrap": "lerna bootstrap --use-workspaces",
+    "bootstrap": "lerna bootstrap --use-workspaces && yarn build:utils",
+    "build:utils": "lerna run build --use-workspaces --stream --scope @geocoder-free/utils",
     "build": "lerna run build --use-workspaces --stream",
-    "eslint": "lerna run eslint:src --stream",
+    "eslint": "yarn build:utils && lerna run eslint:src --stream",
     "type-check": "lerna run type-check --stream",
     "jest": "jest && codecov",
     "test:q": "yarn eslint && yarn type-check && yarn jest",

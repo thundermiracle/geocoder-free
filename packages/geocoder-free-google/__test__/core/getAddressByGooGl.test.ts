@@ -3,7 +3,7 @@ import getAddressByGooGl from 'core/getAddressByGooGl';
 const ADDRESS = '1-2-3新宿区,東京都';
 
 jest.mock('lib/HttpClient', () => ({
-  GetUrl(type: string) {
+  GetUrl(type: string): Promise<string> {
     const GOOGL_START_PLACE = 'https://www.google.com/maps/place/';
     const GOOGL_START_Q = 'https://www.google.com/maps?q=';
     const ENCODE_ADDRESS =
