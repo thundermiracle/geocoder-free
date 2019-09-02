@@ -5,3 +5,4 @@ export { default as getLatLngObj } from './lib/getLatLngObj';
 export { default as getLocaleString } from './lib/getLocaleString';
 export { default as logFormat } from './lib/logFormat';
 export { default as removeSpace } from './lib/removeSpace';
+export { default as isCorrectLatLng } from './lib/isCorrectLatLng';

@@ -1,3 +1,6 @@
+import { isCorrectLatLng } from '@geocoder-free/utils';
+
+import getLatLngFromGooGlUrl from './core/getLatLngFromGooGlUrl';
 import getLatLngFromMapUrl from './core/getLatLngFromMapUrl';
 import getMapUrlWithLatLngByGooGl from './core/getMapUrlWithLatLngByGooGl';
 import { LatLngArray } from './lib/types';
@@ -9,7 +12,13 @@ import { LatLngArray } from './lib/types';
  * @returns Promise<[latitude, longitude]>
  */
 function GetLatLngByGooGl(url: string): Promise<LatLngArray | []> {
-  return getMapUrlWithLatLngByGooGl(url).then(getLatLngFromMapUrl);
+  return getLatLngFromGooGlUrl(url).then(result => {
+    if (isCorrectLatLng(result)) {
+      return result;
+    }
+
+    return getMapUrlWithLatLngByGooGl(url).then(getLatLngFromMapUrl);
+  });
 }
 
 export default GetLatLngByGooGl;

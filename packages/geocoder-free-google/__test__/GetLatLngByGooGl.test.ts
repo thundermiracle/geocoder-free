@@ -13,7 +13,7 @@ test('shortenurl with geocode', async () => {
     'https://goo.gl/maps/FELwD1G9JibSgbFr8',
   );
 
-  expect(result).toEqual([35.658694, 139.744528]);
+  expect(result).toEqual([35.6586982, 139.7445263]);
 });
 
 test('wrong url', async () => {
