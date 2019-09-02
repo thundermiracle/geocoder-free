@@ -1,4 +1,4 @@
-import removeSpace from 'lib/removeSpace';
+import removeSpace from '../lib/removeSpace';
 import purgeAddress from './purgeAddress';
 import cutToBlockNumber from './cutToBlockNumber';
 

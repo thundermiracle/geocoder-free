@@ -10,6 +10,17 @@ const plugins = [
       regenerator: true,
     },
   ],
+  [
+    'module-resolver',
+    {
+      root: ['./'],
+      alias: {
+        src: './src',
+        lib: './src/lib',
+        core: './src/core',
+      },
+    },
+  ],
 ];
 
 // merge
