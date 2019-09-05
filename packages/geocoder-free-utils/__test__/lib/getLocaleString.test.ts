@@ -8,6 +8,12 @@ test('input is wrong', () => {
   expect(result2).toEqual('');
 });
 
+test('input is not date string', () => {
+  const result = getLocaleString('abc');
+
+  expect(result).toEqual('');
+});
+
 test('input is correct', () => {
   const result = getLocaleString('2019-08-29');
   const expected = new Date('2019-08-29').toLocaleString();

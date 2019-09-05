@@ -3,5 +3,10 @@ export default function getLocaleString(dateStr: string | null): string {
     return '';
   }
 
-  return new Date(dateStr).toLocaleString();
+  const result = new Date(dateStr).toLocaleString();
+  if (result === 'Invalid Date') {
+    return '';
+  }
+
+  return result;
 }
