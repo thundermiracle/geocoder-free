@@ -45,7 +45,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@geocoder-free/utils": "^0.2.2",
+    "@geocoder-free/utils": "^0.2.3",
     "node-fetch": "2.6.0"
   }
 }
