@@ -7,7 +7,7 @@ test('correct address', async () => {
 });
 
 test('wrong address', async () => {
-  const result = await GetLatLngByAddress('香川県新宿区公園４丁目２−８');
+  const result = await GetLatLngByAddress('香川県ABC新宿区公園４丁目２−８');
 
   expect(result).toEqual([]);
 });
