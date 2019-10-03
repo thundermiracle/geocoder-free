@@ -1,0 +1,52 @@
+{
+  "name": "@geocoder-free/yahoo",
+  "version": "0.1.0",
+  "license": "MIT",
+  "description": "get latitude and longitude by yahoo",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thundermiracle/geocoder-free"
+  },
+  "bugs": {
+    "url": "https://github.com/thundermiracle/geocoder-free/issues"
+  },
+  "keywords": [
+    "geocode",
+    "address",
+    "gps",
+    "yahoo open local platform",
+    "YOLP",
+    "latitude",
+    "longitude",
+    "position"
+  ],
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "eslint:src": "eslint src/**/*.{ts,tsx}",
+    "eslint:test": "eslint __test__/**/*.{ts,tsx}",
+    "eslint": "yarn eslint:src && yarn eslint:test",
+    "jest": "jest",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "yarn type-check -- --watch",
+    "test": "yarn type-check && yarn eslint && yarn jest",
+    "dev": "ts-node-dev --respawn dev",
+    "emit:types": "tsc --emitDeclarationOnly",
+    "mv:types": "node ../../scripts/move-types",
+    "rm:types": "node ../../scripts/remove-types",
+    "build:types": "yarn emit:types && yarn mv:types && yarn rm:types",
+    "build:js": "cross-env NODE_ENV=production babel src --out-dir dist --noEmit --extensions \".ts,.tsx\" --verbose",
+    "prebuild": "rimraf dist/",
+    "build": "yarn build:types && yarn build:js"
+  },
+  "author": "thundermiracle",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@geocoder-free/utils": "^0.2.3",
+    "node-fetch": "2.6.0"
+  }
+}

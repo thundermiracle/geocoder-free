@@ -8,6 +8,7 @@ module.exports = {
     '!**/HttpClient.(js|ts)',
     '!**/logger.(js|ts)',
     '!**/logFormat.(js|ts)',
+    '!**/GetLatLngByAPI.(js|ts)',
     '!**/index.(js|ts)',
   ],
 
