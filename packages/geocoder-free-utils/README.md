@@ -1,4 +1,4 @@
-# @geocoder-free/util
+# @geocoder-free/utils
 
 ## Description
 
