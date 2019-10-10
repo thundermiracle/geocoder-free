@@ -23,7 +23,7 @@ yarn add @geocoder-free/yahoo
     ```javascript
     const { GetLatLngByAPI } = require('@geocoder-free/yahoo');
 
-    GetLatLngByAPI('東京都港区六本木').then(console.log);
+    GetLatLngByAPI('YOLP appid', '東京都港区六本木').then(console.log);
     // print [35.66288632, 139.73359259]
     ```
 

@@ -8,11 +8,13 @@
  * 1567303200000 instead of 1567335600000 even if the system's timezone is UTC
  */
 function getTimeByTimezone(dateStr: string, timezone: number): number {
-  const tzOffset = new Date().getTimezoneOffset();
+  const dtBfFormat = new Date(dateStr);
+
+  const tzOffset = dtBfFormat.getTimezoneOffset();
   const nowTZ = -tzOffset / 60;
   const timespan = (nowTZ - timezone) * 3600 * 1000;
 
-  return new Date(dateStr).getTime() + timespan;
+  return dtBfFormat.getTime() + timespan;
 }
 
 export default getTimeByTimezone;
