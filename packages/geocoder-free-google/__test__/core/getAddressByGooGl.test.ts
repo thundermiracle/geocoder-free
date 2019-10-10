@@ -2,7 +2,7 @@ import getAddressByGooGl from 'core/getAddressByGooGl';
 
 const ADDRESS = '1-2-3新宿区,東京都';
 
-jest.mock('lib/HttpClient', () => ({
+jest.mock('@geocoder-free/utils/HttpClient', () => ({
   GetUrl(type: string): Promise<string> {
     const GOOGL_START_PLACE = 'https://www.google.com/maps/place/';
     const GOOGL_START_Q = 'https://www.google.com/maps?q=';

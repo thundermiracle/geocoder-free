@@ -22,7 +22,9 @@
     "ja",
     "lib",
     "index.js",
-    "index.d.ts"
+    "index.d.ts",
+    "HttpClient.js",
+    "HttpClient.d.ts"
   ],
   "scripts": {
     "eslint:src": "eslint src/**/*.{ts,tsx}",
@@ -44,6 +46,10 @@
   "author": "thundermiracle",
   "publishConfig": {
     "access": "public"
+  },
+  "peerDependencies": {
+    "node-fetch": ">=2",
+    "fetch-jsonp": ">=1"
   },
   "dependencies": {
     "ramda": "^0.26.1"

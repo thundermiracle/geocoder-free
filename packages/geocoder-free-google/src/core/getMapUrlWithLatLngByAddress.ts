@@ -1,4 +1,4 @@
-import { Get } from '../lib/HttpClient';
+import { Get } from '@geocoder-free/utils/HttpClient';
 
 import getMapUrlWithLatLng from './getMapUrlWithLatLng';
 
@@ -13,7 +13,7 @@ const GET_GEO_BASE_URL = 'https://www.google.com/search?gl=jp&tbm=map&q=';
  */
 function getMapUrlWithLatLngByAddress(address: string): Promise<string> {
   return Get(`${GET_GEO_BASE_URL}${encodeURIComponent(address)}`, 'text')
-    .then(data => data.replace(")]}'", ''))
+    .then(data => data.toString().replace(")]}'", ''))
     .then(getMapUrlWithLatLng);
 }
 

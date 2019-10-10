@@ -1,4 +1,4 @@
-import { GetUrl } from '../lib/HttpClient';
+import { GetUrl } from '@geocoder-free/utils/HttpClient';
 
 import getLatLngFromMapUrl from './getLatLngFromMapUrl';
 import { LatLngArray } from '../lib/types';

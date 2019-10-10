@@ -16,6 +16,28 @@ npm install @geocoder-free/utils
 yarn add @geocoder-free/utils
 ```
 
+## Extra Installation
+
+If you want to use HttpClient in server, node-fetch is required:
+
+```sh
+// with npm
+npm install node-fetch
+
+// with yarn
+yarn add node-fetch
+```
+
+If you want to use HttpClient in client, fetch-jsonp is required:
+
+```sh
+// with npm
+npm install fetch-jsonp
+
+// with yarn
+yarn add fetch-jsonp
+```
+
 ## APIs
 
 * [How to import](#import)
