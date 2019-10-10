@@ -8,3 +8,4 @@ export { default as removeSpace } from './lib/removeSpace';
 export { default as isCorrectLatLng } from './lib/isCorrectLatLng';
 export { default as getTimeByTimezone } from './lib/getTimeByTimezone';
 export { default as formatDate } from './lib/formatDate';
+export { default as logger } from './lib/logger';

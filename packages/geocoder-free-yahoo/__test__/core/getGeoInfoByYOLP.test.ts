@@ -1,6 +1,6 @@
 import getGeoInfoByYOLP from 'core/getGeoInfoByYOLP';
 
-jest.mock('lib/HttpClient', () => ({
+jest.mock('@geocoder-free/utils/HttpClient', () => ({
   Get(url: string, type: string): Promise<any> {
     if (
       url.startsWith(

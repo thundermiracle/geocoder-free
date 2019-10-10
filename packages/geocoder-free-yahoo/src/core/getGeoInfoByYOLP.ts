@@ -1,4 +1,4 @@
-import { Get } from '../lib/HttpClient';
+import { Get } from '@geocoder-free/utils/HttpClient';
 import { GeoInfo } from '../lib/types';
 
 const GET_GEO_BASE_URL = `https://map.yahooapis.jp/geocode/V1/geoCoder?output=json&recursive=true&appid={appid}&query={query}`;
