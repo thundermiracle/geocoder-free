@@ -1,6 +1,6 @@
 {
   "name": "@geocoder-free/google",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "license": "MIT",
   "description": "get latitude and longitude by address without using google map api",
   "repository": {

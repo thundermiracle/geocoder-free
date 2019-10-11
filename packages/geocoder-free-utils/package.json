@@ -1,6 +1,6 @@
 {
   "name": "@geocoder-free/utils",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "license": "MIT",
   "description": "utils for geocoding including purging addresses etc.",
   "repository": {
@@ -48,14 +48,14 @@
     "access": "public"
   },
   "peerDependencies": {
-    "node-fetch": ">=2",
-    "fetch-jsonp": ">=1"
+    "fetch-jsonp": ">=1",
+    "node-fetch": ">=2"
   },
   "dependencies": {
     "ramda": "^0.26.1"
   },
   "devDependencies": {
-    "node-fetch": "2.6.0",
-    "fetch-jsonp": "1.1.3"
+    "fetch-jsonp": "1.1.3",
+    "node-fetch": "2.6.0"
   }
 }
