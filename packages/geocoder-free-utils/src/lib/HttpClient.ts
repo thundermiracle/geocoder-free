@@ -1,4 +1,5 @@
-import fetch, { RequestInit } from 'node-fetch';
+import fetchNode, { RequestInit } from 'node-fetch';
+import fetchJSON from 'fetch-jsonp';
 
 function createHeader(): Promise<object> {
   return Promise.resolve({
@@ -6,9 +7,28 @@ function createHeader(): Promise<object> {
   });
 }
 
-async function Post(url: string, data: object): Promise<string> {
+function getFetchFunc(
+  forceNodeFetch: boolean,
+): typeof fetchNode | typeof fetchJSON {
+  if (forceNodeFetch) {
+    return fetchNode;
+  }
+
+  if (typeof window === 'undefined') {
+    return fetchNode;
+  }
+
+  return fetchJSON;
+}
+
+async function Post(
+  url: string,
+  data: object,
+  forceNodeFetch = false,
+): Promise<string> {
   const headers = await createHeader();
 
+  const fetch = getFetchFunc(forceNodeFetch);
   const res = await fetch(url, {
     credentials: 'same-origin',
     headers,
@@ -21,17 +41,29 @@ async function Post(url: string, data: object): Promise<string> {
   return result;
 }
 
-async function Get(url: string, returnType = 'json'): Promise<string | object> {
+async function Get(
+  url: string,
+  returnType = 'json',
+  forceNodeFetch = false,
+): Promise<string | object> {
   const headers = await createHeader();
-  const res = await fetch(url, {
-    headers,
-    method: 'GET',
-  } as RequestInit);
 
   let result;
   if (returnType === 'json') {
-    result = await res.json();
+    // type=json returns fetch-jsonp
+    const fetch = getFetchFunc(forceNodeFetch);
+    const res = await fetch(url, {
+      headers,
+      method: 'GET',
+    } as RequestInit);
+
+    result = res.json();
   } else {
+    const res = await fetchNode(url, {
+      headers,
+      method: 'GET',
+    } as RequestInit);
+
     result = await res.text();
   }
 
@@ -40,7 +72,8 @@ async function Get(url: string, returnType = 'json'): Promise<string | object> {
 
 async function GetUrl(url: string): Promise<string> {
   const headers = await createHeader();
-  const res = await fetch(url, {
+
+  const res = await fetchNode(url, {
     headers,
     method: 'GET',
   } as RequestInit);
