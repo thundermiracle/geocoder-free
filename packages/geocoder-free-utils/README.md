@@ -41,6 +41,10 @@ yarn add fetch-jsonp
 ## APIs
 
 * [How to import](#import)
+* [HttpClient](#httpclient)
+  * [Get](#get): fetch data by url. using jsonp in client and node-fetch in server to avoid CORS errors in client.
+  * [GetUrl](#geturl): get redirected url.
+  * [Post](#get): post and get data by url. using jsonp in client and node-fetch in server to avoid CORS errors in client.
 * Functions for all
   * [dms2deg](#dms2deg): convert latitude or longitude from dms to decimal
   * [getLatLngByDMSStr](#getLatLngByDMSStr): get latitude and longtitude array from dms latlng string
@@ -62,6 +66,57 @@ yarn add fetch-jsonp
 import { xxx } from '@geocoder-free/utils';
 
 eg: import { dms2deg } from '@geocoder-free/utils';
+```
+
+### HttpClient
+
+*Packages node-fetch and fetch-jsonp are required by HttpClient.*
+
+#### Get
+
+**jsonp mode Can be disabled by pasing true to the 3rd parameter.**
+
+| No.   | Parameter | Required | Type | Default | Description |
+|:------|:---------:|:--------:|:----:|:--------|:------------|
+| 1 | url | 〇 | string |  | |
+| 2 | returnType | | string | 'json' | type of response, 'json' or 'text' |
+| 3 | forceNodeFetch | | boolean | false | if true, fetching data by jsonp will be disabled. |
+
+```js
+import { Get } from '@geocoder-free/utils/HttpClient';
+
+Get(`https://api.google.com/xxxxxx`).then(console.log);
+```
+
+#### GetUrl
+
+Get the redirected url.
+
+| No.   | Parameter | Required | Type | Default | Description |
+|:------|:---------:|:--------:|:----:|:--------|:------------|
+| 1 | url | 〇 | string |  | |
+
+```js
+import { GetUrl } from '@geocoder-free/utils/HttpClient';
+
+GetUrl(`https://goo.gl/maps/nQjjgsyid7iGa42J8`).then(console.log);
+// get 'https://www.google.com/maps/place/%E7%9A%87%E5%B1%85/@35.6938997,139.7628928,15z/data=!4m5!3m4!1s0x60188c0d02d8064d:0xd11a5f0b379e6db7!8m2!3d35.6851739!4d139.7527993'
+```
+
+#### Post
+
+**jsonp mode Can be disabled by pasing true to the 3rd parameter.**
+
+| No.   | Parameter | Required | Type | Default | Description |
+|:------|:---------:|:--------:|:----:|:--------|:------------|
+| 1 | url | 〇 | string |  | |
+| 2 | data | 〇 | object |  | data for post |
+| 3 | forceNodeFetch | | boolean | false | if true, fetching data by jsonp will be disabled. |
+
+```js
+import { Post } from '@geocoder-free/utils/HttpClient';
+
+Post(`https://api.google.com/xxxxxx`).then(console.log);
 ```
 
 ### dms2deg
