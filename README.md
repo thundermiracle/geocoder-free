@@ -12,16 +12,16 @@ Three packages for geocoding.
 
 ## Table of contents
 
-* [@geocoder-free/google](#description-(@geocoder-free/google))
-  * [Install](#install-((@geocoder-free/google)))
-  * [Usage](#usage-(@geocoder-free/google))
-* [@geocoder-free/yahoo](#description-(@geocoder-free/yahoo))
-  * [Install](#install-((@geocoder-free/yahoo)))
-  * [Usage](#usage-(@geocoder-free/yahoo))
-* [@geocoder-free/utils](#description-(@geocoder-free/utils))
-  * [Install](#install-((@geocoder-free/utils)))
-  * [Extra Install](#extra-install-((@geocoder-free/utils)))
-  * [Usage](#usage-(@geocoder-free/utils))
+* [@geocoder-free/google](#description-geocoder-freegoogle)
+  * [Install](#install-geocoder-freegoogle)
+  * [Usage](#usage-geocoder-freegoogle)
+* [@geocoder-free/yahoo](#description-geocoder-freeyahoo)
+  * [Install](#install-geocoder-freeyahoo)
+  * [Usage](#usage-geocoder-freeyahoo)
+* [@geocoder-free/utils](#description-geocoder-freeutils)
+  * [Install](#install-geocoder-freeutils)
+  * [Extra Install](#extra-install-geocoder-freeutils)
+  * [Usage](#usage-geocoder-freeutils)
     * [How to import](#import)
     * [HttpClient](#httpclient)
     * [Get](#get): fetch data by url. using jsonp in client and node-fetch in server to avoid CORS errors in client.
