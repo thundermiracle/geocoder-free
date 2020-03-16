@@ -1,6 +1,6 @@
 {
   "name": "@geocoder-free/utils",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "license": "MIT",
   "description": "utils for geocoding including purging addresses etc.",
   "repository": {
