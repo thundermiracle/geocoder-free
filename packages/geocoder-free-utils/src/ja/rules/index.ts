@@ -1,4 +1,4 @@
-import { compose } from 'ramda';
+import compose from 'ramda/src/compose';
 
 import zenToHan from './zenToHan';
 import multiHyphenToOne from './multiHyphenToOne';

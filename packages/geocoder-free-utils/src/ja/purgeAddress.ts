@@ -1,4 +1,4 @@
-import { compose } from 'ramda';
+import compose from 'ramda/src/compose';
 import purgeFullAddress from './purgeFullAddress';
 import splitAndPurgeAddress from './splitAndPurgeAddress';
 
