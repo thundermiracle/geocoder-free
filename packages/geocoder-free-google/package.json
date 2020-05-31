@@ -21,7 +21,8 @@
   ],
   "main": "dist/index.js",
   "files": [
-    "dist"
+    "dist",
+    "es"
   ],
   "scripts": {
     "eslint:src": "eslint src/**/*.{ts,tsx}",
@@ -36,9 +37,10 @@
     "mv:types": "node ../../scripts/move-types",
     "rm:types": "node ../../scripts/remove-types",
     "build:types": "yarn emit:types && yarn mv:types && yarn rm:types",
-    "build:js": "cross-env NODE_ENV=production babel src --out-dir dist --noEmit --extensions \".ts,.tsx\" --verbose",
-    "prebuild": "rimraf dist/",
-    "build": "yarn build:types && yarn build:js"
+    "build:cjs": "cross-env NODE_ENV=production babel src --out-dir dist --noEmit --extensions \".ts,.tsx\" --verbose",
+    "build:es": "cross-env NODE_ENV=es babel src --out-dir es --noEmit --extensions \".ts,.tsx\" --verbose",
+    "prebuild": "rimraf dist/ es/",
+    "build": "yarn build:types && yarn build:cjs && yarn build:es"
   },
   "author": "thundermiracle",
   "publishConfig": {

@@ -1,6 +1,9 @@
 console.log('NODE_ENV:', process.env.NODE_ENV);
 
 const common = require('../../babel.common');
+const commones = require('../../babel.common.es');
+
+let commonBabelConfig = process.env.NODE_ENV === 'es' ? commones : common;
 
 const plugins = [
   [
@@ -25,8 +28,8 @@ const plugins = [
 
 // merge
 const babelConfig = {
-  ...common,
-  plugins: [...common.plugins, ...plugins],
+  ...commonBabelConfig,
+  plugins: [...commonBabelConfig.plugins, ...plugins],
 };
 
 module.exports = babelConfig;

@@ -1,6 +1,7 @@
 # build output
 npm-debug.log
 dist/
+es/
 
 # dependencies
 node_modules/
