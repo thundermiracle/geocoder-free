@@ -41,8 +41,9 @@
     "build:types": "yarn emit:types && yarn mv:types && yarn rm:types",
     "build:cjs": "cross-env NODE_ENV=production babel src --out-dir ./ --noEmit --extensions \".ts,.tsx\" --verbose",
     "build:es": "cross-env NODE_ENV=es babel src --out-dir ./es --noEmit --extensions \".ts,.tsx\" --verbose",
-    "prebuild": "rimraf es/ ja/ lib/ index.js index.d.ts",
-    "build": "yarn build:types && yarn build:cjs && yarn build:es",
+    "build:umd": "rollup -c",
+    "prebuild": "rimraf es/ ja/ lib/ umd/ index.js index.d.ts",
+    "build": "yarn build:types && yarn build:cjs && yarn build:es && yarn build:umd",
     "build:dev": "yarn build --watch"
   },
   "author": "thundermiracle",
