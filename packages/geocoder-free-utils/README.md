@@ -16,6 +16,12 @@ npm install @geocoder-free/utils
 yarn add @geocoder-free/utils
 ```
 
+## Install From Browser
+
+```
+<script src="https://cdn.jsdelivr.net/npm/@geocoder-free/utils@0.2.8/umd/geocoderfreeutils.min.js"></script>
+```
+
 ## Extra Installation
 
 If you want to use HttpClient in server, node-fetch is required:
@@ -47,8 +53,9 @@ yarn add fetch-jsonp
   * [Post](#get): post and get data by url. using jsonp in client and node-fetch in server to avoid CORS errors in client.
 * Functions for all
   * [dms2deg](#dms2deg): convert latitude or longitude from dms to decimal
-  * [getLatLngByDMSStr](#getLatLngByDMSStr): get latitude and longtitude array from dms latlng string
-  * [getLatLngByDecimalStr](#getLatLngByDecimalStr): get latitude and longtitude array from decimal latlng string
+  * [getLatLngByDMSStr](#getLatLngByDMSStr): get latitude and longitude array from dms latlng string
+  * [getLatLngByDecimalStr](#getLatLngByDecimalStr): get latitude and longitude array from decimal latlng string
+  * [getLatLngCentroid](#getLatLngCentroid): get the centroid latlng from a list of latitude and longitude
   * [getLatLngObj](#getLatLngObj): split latitude,longitude string and transform it to object { lat: xxx, lng: xxx }
   * [getLocaleString](#getLocaleString): parse date string and get toLocaleString if parsing is successful
   * [logFormat](#logFormat): append date string to message
@@ -66,6 +73,14 @@ yarn add fetch-jsonp
 import { xxx } from '@geocoder-free/utils';
 
 eg: import { dms2deg } from '@geocoder-free/utils';
+```
+
+### Import From Browser
+
+```js
+const { xxx } = GeocoderFreeUtils;
+
+eg: const { dms2deg } = GeocoderFreeUtils;
 ```
 
 ### HttpClient
@@ -153,6 +168,17 @@ getLatLngByDMSStr(`35°39'31.3"N+139°44'40.3"E`);
 ```js
 getLatLngByDecimalStr(`35.123, 149.123`);
 // get [35.123, 149.123]
+```
+
+### getLatLngCentroid
+
+| No.   | Parameter | Required | Type | Default | Description |
+|:------|:---------:|:--------:|:----:|:--------|:------------|
+| 1 | latLngInDegr | 〇 | array |  | list of LatLngArray (`[latitude, longitude]`) |
+
+```js
+getLatLngCentroid([[35.123, 139.234], [35.456, 139.567]]);
+// get [35.289614, 139.400158]
 ```
 
 ### getLatLngObj

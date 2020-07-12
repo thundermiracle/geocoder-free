@@ -22,6 +22,7 @@
     "es",
     "ja",
     "lib",
+    "umd",
     "index.js",
     "index.d.ts",
     "HttpClient.js",
