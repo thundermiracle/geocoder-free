@@ -60,6 +60,6 @@
   },
   "devDependencies": {
     "fetch-jsonp": "1.1.3",
-    "node-fetch": "2.6.0"
+    "node-fetch": "2.6.1"
   }
 }
